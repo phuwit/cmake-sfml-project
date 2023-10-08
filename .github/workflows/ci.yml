@@ -47,5 +47,5 @@ jobs:
 
     - uses: actions/upload-artifact@v3
       with:
-        name: ${{ matrix.platform.name }}-${{ matrix.config.name }}-${{ GITHUB_SHA }}
+        name: ${{ matrix.platform.name }}-${{ matrix.config.name }}-${{ env.GITHUB_SHA }}
         path: build
