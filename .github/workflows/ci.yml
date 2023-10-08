@@ -44,3 +44,8 @@ jobs:
     - name: Install
       shell: bash
       run: cmake --install build --config Release
+
+    - uses: ${{ matrix.platform.name }}-${{ matrix.config.name }}-${{ GITHUB_SHA }}
+      with:
+        name: my-artifact
+        path: path/to/artifact/ # or path/to/artifact
