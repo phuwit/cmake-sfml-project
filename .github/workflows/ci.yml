@@ -48,8 +48,9 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.platform.name }}-${{ matrix.config.name }}-full
-        path: build/
-              !build/_deps/
+        path:  |
+         build/
+         !build/_deps/
 
     - uses: actions/upload-artifact@v3
       with:
