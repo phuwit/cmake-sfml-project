@@ -45,7 +45,7 @@ jobs:
       shell: bash
       run: cmake --install build --config Release
 
-    - uses: ${{ matrix.platform.name }}-${{ matrix.config.name }}-${{ GITHUB_SHA }}
+    - uses: actions/upload-artifact@v3
       with:
-        name: my-artifact
-        path: path/to/artifact/ # or path/to/artifact
+        name: ${{ matrix.platform.name }}-${{ matrix.config.name }}-${{ GITHUB_SHA }}
+        path: build
